@@ -1,4 +1,8 @@
+import { useNavigation } from '@/hooks/useNavigation'
+
 export function HeroSection() {
+  const { handleRegister } = useNavigation()
+
   return (
     <section className="pt-16 pb-20 bg-gradient-to-br from-background to-secondary/20">
       <div className="container mx-auto px-4">
@@ -19,9 +23,12 @@ export function HeroSection() {
 
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="https://app.leadnator.com.br/auth&tab=register" className="hover:opacity-80 transition-opacity">
+              <button
+                onClick={handleRegister}
+                className="hover:opacity-80 transition-opacity"
+              >
                 <img src="/images/botao-principal.png" alt="Começar Agora" className="h-12" />
-              </a>
+              </button>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <img src="/images/icon-sem-cartao.svg" alt="Sem cartão" className="h-4" />
                 <span>Sem cartão de crédito</span>

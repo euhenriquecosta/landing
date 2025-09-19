@@ -1,4 +1,8 @@
+import { useNavigation } from '@/hooks/useNavigation'
+
 export function Header() {
+  const { handleLogin, handleRegister } = useNavigation()
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -29,10 +33,16 @@ export function Header() {
 
         {/* Action Buttons */}
         <div className="flex items-center space-x-4">
-          <button className="hover:opacity-80 transition-opacity">
+          <button
+            onClick={handleLogin}
+            className="hover:opacity-80 transition-opacity"
+          >
             <img src="/images/botao-login.png" alt="Login" className="h-8" />
           </button>
-          <button className="hover:opacity-80 transition-opacity">
+          <button
+            onClick={handleRegister}
+            className="hover:opacity-80 transition-opacity"
+          >
             <img src="/images/botao-teste-gratis.png" alt="Teste Grátis" className="h-8" />
           </button>
         </div>

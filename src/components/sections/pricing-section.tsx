@@ -1,3 +1,5 @@
+import { useNavigation } from '@/hooks/useNavigation'
+
 const plans = [
   {
     name: "Bronze",
@@ -69,6 +71,8 @@ const plans = [
 ]
 
 export function PricingSection() {
+  const { handleLogin, handleRegister } = useNavigation()
+
   return (
     <section id="precos" className="py-20 bg-secondary/10">
       <div className="container mx-auto px-4">
@@ -133,22 +137,22 @@ export function PricingSection() {
               </ul>
 
               {plan.name === 'Personalizado' ? (
-                <a
-                  href="https://app.leadnator.com.br/auth"
-                  className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-secondary hover:bg-secondary/80 text-foreground border border-border block text-center"
+                <button
+                  onClick={handleLogin}
+                  className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-secondary hover:bg-secondary/80 text-foreground border border-border"
                 >
                   Falar com Vendas
-                </a>
+                </button>
               ) : (
-                <a
-                  href="https://app.leadnator.com.br/auth&tab=register"
-                  className={`w-full py-3 px-6 rounded-lg font-medium transition-colors block text-center ${plan.popular
+                <button
+                  onClick={handleRegister}
+                  className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${plan.popular
                     ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
                     : 'bg-secondary hover:bg-secondary/80 text-foreground border border-border'
                     }`}
                 >
                   Começar Teste Grátis
-                </a>
+                </button>
               )}
             </div>
           ))}
@@ -164,9 +168,12 @@ export function PricingSection() {
               Experimente todos os recursos sem compromisso. Sem cartão de crédito necessário.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://app.leadnator.com.br/auth&tab=register" className="hover:opacity-80 transition-opacity">
+              <button
+                onClick={handleRegister}
+                className="hover:opacity-80 transition-opacity"
+              >
                 <img src="/images/botao-teste-gratis.png" alt="Teste Grátis" className="h-8" />
-              </a>
+              </button>
               <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
                 <img src="/images/icon-sem-cartao.svg" alt="Sem cartão" className="h-4" />
                 <span>Sem cartão de crédito</span>

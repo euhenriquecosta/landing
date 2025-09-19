@@ -1,3 +1,5 @@
+import { useNavigation } from '@/hooks/useNavigation'
+
 const socialLinks = [
   { name: "Facebook", icon: "/images/rede-face.svg", url: "#" },
   { name: "Instagram", icon: "/images/rede-insta.svg", url: "#" },
@@ -38,6 +40,8 @@ const footerLinks = {
 }
 
 export function Footer() {
+  const { handleLogin, handleRegister } = useNavigation()
+
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-16">
@@ -109,12 +113,18 @@ export function Footer() {
               Setup em apenas 5 minutos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://app.leadnator.com.br/auth&tab=register" className="hover:opacity-80 transition-opacity">
+              <button
+                onClick={handleRegister}
+                className="hover:opacity-80 transition-opacity"
+              >
                 <img src="/images/botao-principal.png" alt="Começar Agora" className="h-8" />
-              </a>
-              <a href="https://app.leadnator.com.br/auth" className="hover:opacity-80 transition-opacity">
+              </button>
+              <button
+                onClick={handleLogin}
+                className="hover:opacity-80 transition-opacity"
+              >
                 <img src="/images/Botao-rodape.png" alt="Falar com Vendas" className="h-8" />
-              </a>
+              </button>
             </div>
           </div>
         </div>
