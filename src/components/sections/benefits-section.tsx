@@ -33,36 +33,36 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section id="beneficios" className="py-20 bg-secondary/10">
+    <section id="beneficios" className="py-12 sm:py-20 bg-secondary/10">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-foreground mb-4">
             Principais Diferenciais
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-3xl mx-auto">
             Tudo que você precisa para transformar visitantes em leads qualificados
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:border-primary/50 group"
+              className="bg-card border border-border rounded-xl p-6 sm:p-8 hover:shadow-lg transition-all duration-300 hover:border-primary/50 group"
             >
-              <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-3 sm:space-x-4">
                 <div className="flex-shrink-0">
                   <img
                     src={benefit.icon}
                     alt={benefit.title}
-                    className="w-12 h-12 object-contain"
+                    className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
                   />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2 sm:mb-3 group-hover:text-primary transition-colors">
                     {benefit.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>

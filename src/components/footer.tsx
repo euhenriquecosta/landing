@@ -44,25 +44,25 @@ export function Footer() {
 
   return (
     <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-12 sm:py-16">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Logo and Description */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
+          <div className="sm:col-span-2 lg:col-span-2 text-center sm:text-left">
+            <div className="flex items-center justify-center sm:justify-start space-x-2 mb-4">
               <img
                 src="/images/logo-leadnator.svg"
                 alt="Leadnator"
-                className="h-8 w-auto"
+                className="h-6 sm:h-8 w-auto"
               />
             </div>
-            <p className="text-muted-foreground mb-6 max-w-md">
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-md mx-auto sm:mx-0">
               Transforme visitantes em leads qualificados sem código.
               Plataforma completa de geração de leads com CRM integrado.
             </p>
 
             {/* Social Links */}
-            <div className="flex space-x-4">
+            <div className="flex justify-center sm:justify-start space-x-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -73,7 +73,7 @@ export function Footer() {
                   <img
                     src={social.icon}
                     alt={social.name}
-                    className="h-6 w-6"
+                    className="h-5 w-5 sm:h-6 sm:w-6"
                   />
                 </a>
               ))}
@@ -82,16 +82,16 @@ export function Footer() {
 
           {/* Footer Links */}
           {Object.entries(footerLinks).map(([category, links], index) => (
-            <div key={index}>
-              <h3 className="text-foreground font-semibold mb-4">
+            <div key={index} className="text-center sm:text-left">
+              <h3 className="text-foreground font-semibold mb-3 sm:mb-4 text-sm sm:text-base">
                 {category}
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
                       href="#"
-                      className="text-muted-foreground hover:text-primary transition-colors text-sm"
+                      className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-sm"
                     >
                       {link}
                     </a>
@@ -103,39 +103,39 @@ export function Footer() {
         </div>
 
         {/* CTA Section */}
-        <div className="bg-secondary/20 border border-border rounded-xl p-8 mb-12">
+        <div className="bg-secondary/20 border border-border rounded-xl p-6 sm:p-8 mb-8 sm:mb-12">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">
               Pronto para começar?
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto">
               Teste grátis por 7 dias. Sem cartão de crédito necessário.
               Setup em apenas 5 minutos.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <button
                 onClick={handleRegister}
                 className="hover:opacity-80 transition-opacity"
               >
-                <img src="/images/botao-principal.png" alt="Começar Agora" className="h-8" />
+                <img src="/images/botao-principal.png" alt="Começar Agora" className="h-6 sm:h-8 mx-auto" />
               </button>
               <button
                 onClick={handleLogin}
                 className="hover:opacity-80 transition-opacity"
               >
-                <img src="/images/Botao-rodape.png" alt="Falar com Vendas" className="h-8" />
+                <img src="/images/Botao-rodape.png" alt="Falar com Vendas" className="h-6 sm:h-8 mx-auto" />
               </button>
             </div>
           </div>
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-muted-foreground">
+        <div className="border-t border-border pt-6 sm:pt-8">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
+            <div className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
               © 2024 Leadnator. Todos os direitos reservados.
             </div>
-            <div className="flex items-center space-x-6 text-sm text-muted-foreground">
+            <div className="flex items-center space-x-4 sm:space-x-6 text-xs sm:text-sm text-muted-foreground">
               <span>Feito com ❤️ no Brasil</span>
               <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
               <span>CNPJ: 12.345.678/0001-90</span>

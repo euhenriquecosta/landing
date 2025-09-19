@@ -14,9 +14,9 @@ import { Footer } from './components/footer'
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground w-full max-w-full overflow-x-hidden">
       <Header />
-      <main>
+      <main className="w-full max-w-full">
         <HeroSection />
         <BenefitsSection />
         <FlowBuilderSection />

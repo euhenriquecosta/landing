@@ -74,19 +74,19 @@ export function PricingSection() {
   const { handleLogin, handleRegister } = useNavigation()
 
   return (
-    <section id="precos" className="py-20 bg-secondary/10">
+    <section id="precos" className="py-12 sm:py-20 bg-secondary/10">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-foreground mb-4">
             Planos e{" "}
             <span className="text-primary">Preços</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-sm sm:text-base lg:text-xl text-muted-foreground max-w-3xl mx-auto">
             Escolha o plano ideal para seu negócio. Teste grátis por 7 dias em qualquer plano.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {plans.map((plan, index) => (
             <div
               key={index}
@@ -103,33 +103,33 @@ export function PricingSection() {
                 </div>
               )}
 
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-foreground mb-2">
+              <div className="text-center mb-4 sm:mb-6">
+                <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">
                   {plan.name}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4">
+                <p className="text-muted-foreground text-xs sm:text-sm mb-3 sm:mb-4">
                   {plan.domains}
                 </p>
                 <div className="flex items-baseline justify-center">
-                  <span className="text-4xl font-bold text-foreground">
+                  <span className="text-2xl sm:text-3xl font-bold text-foreground">
                     {plan.price}
                   </span>
-                  <span className="text-muted-foreground ml-1">
+                  <span className="text-muted-foreground ml-1 text-xs sm:text-sm">
                     {plan.period}
                   </span>
                 </div>
-                <p className="text-muted-foreground text-sm mt-2">
+                <p className="text-muted-foreground text-xs sm:text-sm mt-2">
                   {plan.description}
                 </p>
               </div>
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 {plan.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-start space-x-3">
-                    <div className="w-5 h-5 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <li key={featureIndex} className="flex items-start space-x-2 sm:space-x-3">
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full"></div>
                     </div>
-                    <span className="text-sm text-muted-foreground">
+                    <span className="text-xs sm:text-sm text-muted-foreground">
                       {feature}
                     </span>
                   </li>
@@ -139,14 +139,14 @@ export function PricingSection() {
               {plan.name === 'Personalizado' ? (
                 <button
                   onClick={handleLogin}
-                  className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-secondary hover:bg-secondary/80 text-foreground border border-border"
+                  className="w-full py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-medium transition-colors bg-secondary hover:bg-secondary/80 text-foreground border border-border text-sm sm:text-base"
                 >
                   Falar com Vendas
                 </button>
               ) : (
                 <button
                   onClick={handleRegister}
-                  className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${plan.popular
+                  className={`w-full py-2 sm:py-3 px-4 sm:px-6 rounded-lg font-medium transition-colors text-sm sm:text-base ${plan.popular
                     ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
                     : 'bg-secondary hover:bg-secondary/80 text-foreground border border-border'
                     }`}
@@ -159,12 +159,12 @@ export function PricingSection() {
         </div>
 
         {/* Teste Gratuito */}
-        <div className="text-center mt-12">
-          <div className="bg-card border border-border rounded-xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
+        <div className="text-center mt-8 sm:mt-12">
+          <div className="bg-card border border-border rounded-xl p-6 sm:p-8 max-w-2xl mx-auto">
+            <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4">
               Teste Grátis por 7 Dias
             </h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
               Experimente todos os recursos sem compromisso. Sem cartão de crédito necessário.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -172,10 +172,10 @@ export function PricingSection() {
                 onClick={handleRegister}
                 className="hover:opacity-80 transition-opacity"
               >
-                <img src="/images/botao-teste-gratis.png" alt="Teste Grátis" className="h-8" />
+                <img src="/images/botao-teste-gratis.png" alt="Teste Grátis" className="h-6 sm:h-8 mx-auto" />
               </button>
-              <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
-                <img src="/images/icon-sem-cartao.svg" alt="Sem cartão" className="h-4" />
+              <div className="flex items-center justify-center space-x-2 text-xs sm:text-sm text-muted-foreground">
+                <img src="/images/icon-sem-cartao.svg" alt="Sem cartão" className="h-3 sm:h-4" />
                 <span>Sem cartão de crédito</span>
               </div>
             </div>
