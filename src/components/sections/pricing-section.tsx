@@ -132,14 +132,24 @@ export function PricingSection() {
                 ))}
               </ul>
 
-              <button
-                className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${plan.popular
-                  ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
-                  : 'bg-secondary hover:bg-secondary/80 text-foreground border border-border'
-                  }`}
-              >
-                {plan.name === 'Personalizado' ? 'Falar com Vendas' : 'Começar Teste Grátis'}
-              </button>
+              {plan.name === 'Personalizado' ? (
+                <a
+                  href="https://app.leadnator.com.br/auth"
+                  className="w-full py-3 px-6 rounded-lg font-medium transition-colors bg-secondary hover:bg-secondary/80 text-foreground border border-border block text-center"
+                >
+                  Falar com Vendas
+                </a>
+              ) : (
+                <a
+                  href="https://app.leadnator.com.br/auth&tab=register"
+                  className={`w-full py-3 px-6 rounded-lg font-medium transition-colors block text-center ${plan.popular
+                    ? 'bg-primary hover:bg-primary/90 text-primary-foreground'
+                    : 'bg-secondary hover:bg-secondary/80 text-foreground border border-border'
+                    }`}
+                >
+                  Começar Teste Grátis
+                </a>
+              )}
             </div>
           ))}
         </div>
@@ -154,9 +164,9 @@ export function PricingSection() {
               Experimente todos os recursos sem compromisso. Sem cartão de crédito necessário.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="hover:opacity-80 transition-opacity">
+              <a href="https://app.leadnator.com.br/auth&tab=register" className="hover:opacity-80 transition-opacity">
                 <img src="/images/botao-teste-gratis.png" alt="Teste Grátis" className="h-8" />
-              </button>
+              </a>
               <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
                 <img src="/images/icon-sem-cartao.svg" alt="Sem cartão" className="h-4" />
                 <span>Sem cartão de crédito</span>

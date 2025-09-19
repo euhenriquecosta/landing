@@ -109,12 +109,12 @@ export function Footer() {
               Setup em apenas 5 minutos.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="hover:opacity-80 transition-opacity">
+              <a href="https://app.leadnator.com.br/auth&tab=register" className="hover:opacity-80 transition-opacity">
                 <img src="/images/botao-principal.png" alt="Começar Agora" className="h-8" />
-              </button>
-              <button className="hover:opacity-80 transition-opacity">
+              </a>
+              <a href="https://app.leadnator.com.br/auth" className="hover:opacity-80 transition-opacity">
                 <img src="/images/Botao-rodape.png" alt="Falar com Vendas" className="h-8" />
-              </button>
+              </a>
             </div>
           </div>
         </div>

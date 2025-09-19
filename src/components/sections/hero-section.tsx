@@ -19,9 +19,9 @@ export function HeroSection() {
 
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="hover:opacity-80 transition-opacity">
+              <a href="https://app.leadnator.com.br/auth&tab=register" className="hover:opacity-80 transition-opacity">
                 <img src="/images/botao-principal.png" alt="Começar Agora" className="h-12" />
-              </button>
+              </a>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <img src="/images/icon-sem-cartao.svg" alt="Sem cartão" className="h-4" />
                 <span>Sem cartão de crédito</span>
